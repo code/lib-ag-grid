@@ -93,7 +93,8 @@ const RowComp = (params: { rowCtrl: RowCtrl, containerType: RowContainerType }) 
             // when cols reordered, which would stop the CSS transitions from working
             setCellCtrls: (next, useFlushSync) => {
                 agFlushSync(useFlushSync, () => {
-                    setCellCtrls(prev => getNextValueIfDifferent(prev, next, domOrderRef.current));
+                    setCellCtrls(next);
+                   // setCellCtrls(prev => getNextValueIfDifferent(prev, next, domOrderRef.current));
                 });
             },
             showFullWidth: compDetails => setFullWidthCompDetails(compDetails),
